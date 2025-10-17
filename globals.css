@@ -1,0 +1,19 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,700|Arsenal:700");
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Arimo", sans-serif;
+  overflow: hidden; /* prevent unwanted scroll */
+}
+
+a {
+  text-decoration: none;
+}
