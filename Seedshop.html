@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seed Shop</title>
+  <title>Seed Shop - Vast Harvest</title>
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
   <div class="seedshop">
@@ -17,6 +18,11 @@
           <img src="https://c.animaapp.com/JsrX65Ga/img/ast-1@2x.png" alt="Logo" class="logo" />
         </a>
       </div>
+
+      <button class="hamburger" aria-label="Toggle navigation">
+        ☰
+      </button>
+
       <nav class="nav">
         <a href="Bookstore.html">📗</a>
         <a href="ContactUs.html">Contact Us</a>
@@ -27,12 +33,12 @@
     </header>
 
     <!-- Main Heading -->
-    <main class="main-content">
+    <main class="main-content fade-in">
       <h1 class="seedshop-title">Autumn Seeds</h1>
 
       <!-- Seed list container -->
       <section class="seedshop-list">
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-25.svg" alt="Kale" />
           <div class="seedshop-item-info">
             <h2>Kale</h2>
@@ -40,7 +46,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-27.svg" alt="Garlic" />
           <div class="seedshop-item-info">
             <h2>Garlic</h2>
@@ -48,7 +54,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-28.svg" alt="Turnip" />
           <div class="seedshop-item-info">
             <h2>Turnip</h2>
@@ -56,7 +62,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-29.svg" alt="Mustard Greens" />
           <div class="seedshop-item-info">
             <h2>Mustard Greens</h2>
@@ -64,7 +70,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-30.svg" alt="Cauliflower" />
           <div class="seedshop-item-info">
             <h2>Cauliflower</h2>
@@ -72,7 +78,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-31.svg" alt="Brussels Sprouts" />
           <div class="seedshop-item-info">
             <h2>Brussels Sprouts</h2>
@@ -80,7 +86,7 @@
             <button class="add-to-cart">Add to Cart</button>
           </div>
         </div>
-        <div class="seedshop-item">
+        <div class="seedshop-item fade-in">
           <img src="https://c.animaapp.com/JsrX65Ga/img/rectangle-26.svg" alt="Arugula" />
           <div class="seedshop-item-info">
             <h2>Arugula</h2>
@@ -95,6 +101,9 @@
     <footer class="footer">
       © David 2025
     </footer>
+
+    <!-- Temporary message -->
+    <div id="cart-message" class="cart-message">Added to cart!</div>
 
   </div>
 </body>

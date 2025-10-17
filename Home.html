@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Vast Harvest</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="home-container">
-      <!-- Header -->
-      <header class="header">
-        <a href="Home.html">
-          <img src="https://c.animaapp.com/Vl7Nnl0p/img/ast-1@2x.png" alt="Logo" class="logo" />
-        </a>
-        <nav class="nav">
-          <a href="Bookstore.html">📗</a>
-          <a href="ContactUs.html">Contact Us</a>
-          <a href="AboutUs.html">About Us</a>
-          <a href="Signup.html">Sign Up/Login</a>
-          <a href="Cart.html">🛒</a>
-        </nav>
-      </header>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home - Vast Harvest</title>
+  <link rel="stylesheet" href="globals.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="home-container">
+    <header class="header">
+      <a href="Home.html"><img src="https://c.animaapp.com/Vl7Nnl0p/img/ast-1@2x.png" alt="Logo" class="logo"/></a>
 
-      <!-- Hero section -->
-      <section class="hero">
+      <!-- Mobile toggle (displayed only under 900px) -->
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav class="nav">
+        <a href="Bookstore.html">📗</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="Signup.html">Sign Up/Login</a>
+        <a href="Cart.html">🛒<span class="cart-badge">0</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero fade-in">
         <div class="hero-overlay">
           <h1>Plant with Us Today!</h1>
         </div>
       </section>
 
-      <!-- Season Grid -->
-      <section class="seasons">
-        <div class="season spring">🌻 Spring (March–May)</div>
-        <div class="season summer">☀️ Summer (June–August)</div>
-        <a href="SeedShop.html" class="season autumn">🍂 Autumn (September–November)</a>
-        <div class="season winter">❄️ Winter (December–February)</div>
+      <section class="seasons fade-in">
+        <div class="season spring">🌻 Spring (March–May)</div>
+        <div class="season summer">☀️ Summer (June–August)</div>
+        <a href="SeedShop.html" class="season autumn">🍂 Autumn (September–November)</a>
+        <div class="season winter">❄️ Winter (December–February)</div>
       </section>
+    </main>
 
-      <!-- Footer -->
-      <footer class="footer">
-        © David 2025
-      </footer>
-    </div>
-  </body>
+    <footer class="footer">© David 2025</footer>
+  </div>
+
+  <script defer src="main.js"></script>
+</body>
 </html>

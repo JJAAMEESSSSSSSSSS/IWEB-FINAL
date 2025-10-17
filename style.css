@@ -1,160 +1,1294 @@
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== HOME PAGE ========== */
 
-/* Tablets (portrait & landscape) */
-@media (max-width: 1024px) {
-  .home-container .hero-overlay h1 {
-    font-size: 2.2rem;
-  }
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arimo", sans-serif;
 
-  .home-container .seasons {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+  /* Full-page background image */
+  background-image: url("https://c.animaapp.com/Vl7Nnl0p/img/rectangle-17.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional, keeps bg fixed on scroll */
+  color: #000; /* default text color */
+  position: relative;
+  overflow-x: hidden;
+}
 
-  .signup-login {
+/* Overlay for readability across the entire background */
+.home-container::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+  z-index: -1; /* behind all content */
+}
+
+/* Header */
+.home-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff; /* solid white for blending with logo */
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  z-index: 10; /* above the overlay */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.home-container .logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.home-container .nav a {
+  margin-left: 20px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.home-container .nav a:hover {
+  color: #f2c94c; /* highlight color on hover */
+}
+
+/* Hero Section */
+.home-container .hero {
+  height: 40vh;
+  position: relative;
+  background: transparent; /* no background since container has bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.home-container .hero-overlay {
+  background-color: transparent; /* no overlay inside hero */
+  text-align: center;
+}
+
+.home-container .hero-overlay h1 {
+  font-family: "Arsenal", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* Season Cards */
+.home-container .seasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.home-container .season {
+  background-color: #b2beb5;
+  padding: 30px 20px;
+  border-radius: 0 15px 15px 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Arsenal", sans-serif;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.home-container .season:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+}
+
+.home-container .season.spring {
+  background-color: #b2beb5;
+}
+
+.home-container .season.summer {
+  background-color: #f2c94c;
+  color: #000000;
+}
+
+.home-container .season.autumn {
+  background-color: #a67c52;
+}
+
+.home-container .season.winter {
+  background-color: #8e9aaf;
+}
+
+/* Footer */
+.home-container .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  margin-top: auto;
+  z-index: 10;
+  position: relative;
+  font-family: "Arimo", sans-serif;
+}
+
+
+
+/* ========== SIGNUP/LOGIN PAGE ========== */
+
+.signup-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  padding: 40px;
+  padding-top: 60px; /* space for the back link */
+  box-sizing: border-box;
+}
+
+/* Back link - fixed top-left */
+.signup-login .back-link {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 18px;
+  color: #000000;
+  font-weight: 400;
+  font-family: "Arimo", sans-serif;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Left Section */
+.signup-login .left-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.signup-login .ast {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
+}
+
+.signup-login .tagline {
+  font-size: 22px;
+  color: #000000;
+  margin-top: 30px;
+  font-family: "Arimo", sans-serif;
+}
+
+/* Right Section */
+.signup-login .right-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signup-login .form-title {
+  font-family: "Arsenal", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.signup-login .form-field {
+  width: 80%;
+  max-width: 400px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #4d4d5c;
+}
+
+.signup-login .signup-button {
+  background-color: #4a773c;
+  color: white;
+  font-size: 24px;
+  padding: 14px 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Footer */
+.signup-login .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Arimo", sans-serif;
+}
+
+/* About Us Container */
+.about-us {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Arimo", sans-serif;
+}
+
+
+
+/* Header */
+.about-us .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  position: relative;
+}
+
+.about-us .logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.about-us .nav a {
+  margin-left: 20px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-us .nav a:hover {
+  color: #f2c94c;
+}
+
+/* Main content */
+.about-us main {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.about-us .page-title {
+  font-family: "Arsenal", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.about-us .page-text {
+  font-family: "Arimo", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Hide any background images or overlays previously used */
+.about-us .rectangle {
+  display: none;
+}
+
+/* Footer */
+.about-us .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  margin-top: auto;
+  z-index: 10;
+  position: relative;
+  font-family: "Arimo", sans-serif;
+}
+
+/* Contact Us */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arimo", sans-serif;
+
+  /* Background image same style as Home */
+  background-image: url("https://c.animaapp.com/Vl7Nnl0p/img/rectangle-17.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Overlay for readability */
+.contact-container::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Header */
+.contact-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.contact-container .logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.contact-container .nav a {
+  margin-left: 20px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-container .nav a:hover {
+  color: #f2c94c;
+}
+
+/* Main content */
+.contact-container .contact-main {
+  flex-grow: 1;
+  max-width: 900px;
+  margin: 60px auto 40px auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
+  color: #000;
+}
+
+.contact-container .contact-main h1 {
+  font-family: "Arsenal", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-container .contact-info p {
+  font-family: "Arimo", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.contact-container .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Arimo", sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+/* Cart CSS */
+.cart .rectangle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;       
+  height: 100vh;      
+  object-fit: cover;
+  z-index: -1;        
+}
+
+/* Header */
+.cart .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.cart .logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Nav Links */
+.cart .nav a {
+  margin-left: 20px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;    
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cart .nav a:hover {
+  color: #f2c94c; 
+}
+
+.cart .nav a.cart-icon {
+  font-size: 18px;    
+}
+
+/* Main Content */
+.cart-main {
+  flex-grow: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* Empty message */
+.cart-main .empty-message {
+  font-family: "Arsenal", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+/* Checkout Button */
+.cart-main .checkout-button {
+  font-family: "Arsenal", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 12px 40px;
+  border-radius: 15px;
+  border: 2px solid #d3d3d3;
+  background-color: transparent;
+  color: #d3d3d3;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+}
+
+/* Enable button on hover (if enabled) */
+.cart-main .checkout-button:not(:disabled) {
+  background-color: #4a773c;
+  border-color: #4a773c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cart-main .checkout-button:not(:disabled):hover {
+  background-color: #3e622f;
+  border-color: #3e622f;
+}
+
+/* Footer */
+.cart .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Arimo", sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+/* ========== BOOKSTORE PAGE ========== */
+
+.bookstore {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arimo", sans-serif;
+  background-image: url("https://c.animaapp.com/YmSIET7D/img/rectangle-17.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header */
+.bookstore .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.bookstore .logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.bookstore .nav a {
+  margin-left: 20px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bookstore .nav a:hover {
+  color: #f2c94c;
+}
+
+/* Book Design Image under Header */
+.bookstore .book-design-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px 0;
+}
+
+.bookstore .book-design {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Main Content */
+.bookstore .main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+.bookstore .book-title {
+  font-family: "Arsenal", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+}
+
+/* Book Card Container */
+.bookstore .book-wrapper {
+  background-color: #ffffff; /* white card */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.bookstore .book-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.bookstore .book-description {
+  font-size: 1.125rem;
+  font-family: "Arimo", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Add to Cart Button */
+.bookstore .add-to-cart-btn {
+  background-color: #4a773c;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookstore .add-to-cart-btn:hover {
+  background-color: #3e622f;
+}
+
+/* Footer */
+.bookstore .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Arimo", sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+/* Container */
+.seedshop {
+  min-width: 1280px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: "Arimo", sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+/* Header / Navigation */
+.seedshop .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+  user-select: none;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.seedshop .header-left .logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.seedshop .nav {
+  display: flex;
+  font-weight: 700;
+  font-size: 18px;
+  align-items: center;
+}
+
+.seedshop .nav a {
+  margin-left: 20px; /* same as other pages */
+  text-decoration: none;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: "Arsenal", sans-serif;
+  line-height: 1.4;
+}
+
+.seedshop .nav a:first-child {
+  margin-left: 0; /* Remove left margin on the first nav link */
+}
+
+
+.seedshop .nav a:hover {
+  color: #f2c94c; 
+}
+
+
+.seedshop .nav a.cart-icon {
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Main content */
+.seedshop .main-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.seedshop-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #4a773c;
+  text-align: center;
+  user-select: none;
+}
+
+/* Seed list container */
+.seedshop-list {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-height: calc(100vh - 180px); /* header + footer space */
+  overflow-y: auto;
+  padding-right: 10px;
+  border-radius: 15px;
+  background-color: #f8f9f7;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Individual seed item */
+.seedshop-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  gap: 30px;
+  user-select: none;
+}
+
+.seedshop-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.seedshop-item-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.seedshop-item-info h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  color: #000;
+}
+
+.seedshop-item-info .quantity {
+  font-size: 40px;
+  font-weight: 400;
+  width: 40px;
+  text-align: center;
+  user-select: none;
+  color: #000;
+}
+
+.seedshop-item-info .add-to-cart {
+  background-color: #4a773c;
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seedshop-item-info .add-to-cart:hover {
+  background-color: #3b5d2e;
+}
+
+/* Footer */
+.seedshop .footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Arimo", sans-serif;
+  position: relative;
+  z-index: 10;
+  user-select: none;
+  margin-top: auto;
+}
+
+/* ================= Responsive + Subtle Animations ================= */
+
+/* Utilities */
+.fade-in { opacity: 0; transform: translateY(12px); transition: opacity 560ms cubic-bezier(.2,.9,.2,1), transform 560ms cubic-bezier(.2,.9,.2,1); }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* Cart badge (shared look for all pages) */
+.cart-badge {
+  display: inline-block;
+  min-width: 20px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background: #4a773c;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  margin-left: 8px;
+  vertical-align: top;
+  transition: transform 160ms ease;
+}
+
+/* Mobile toggle button (appears below 900px) */
+.mobile-toggle {
+  display: none;
+  font-size: 28px;
+  line-height: 1;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  color: #000;
+  user-select: none;
+}
+
+/* Top header subtle scrolled state */
+.header.scrolled {
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* Small interactive lift for buttons */
+.add-to-cart, .add-to-cart-btn, .signup-button, .checkout-button {
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+.add-to-cart:hover, .add-to-cart-btn:hover, .signup-button:hover, .checkout-button:not(:disabled):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* Focus outlines for accessibility */
+.mobile-toggle:focus, .nav a:focus, .add-to-cart:focus, .signup-button:focus { outline: 3px solid rgba(74,119,60,0.18); outline-offset: 3px; }
+
+/* ================= Breakpoints ================= */
+/* Mobile: <= 600px */
+/* Tablet: 601 - 900px */
+/* Large Tablet / Small Desktop: 901 - 1200px */
+/* Desktop: >1200px */
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  /* Show mobile toggle, stack nav */
+  .mobile-toggle { display: inline-block; }
+  .nav { display: none !important; position: fixed; top: 68px; right: 12px; background: rgba(255,255,255,0.98); flex-direction: column; padding: 12px; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); z-index: 9999; width: calc(100% - 32px); max-width: 320px; }
+  .nav.show { display: flex !important; }
+  .nav a { padding: 10px 12px; font-size: 18px; display: block; }
+
+  /* Header spacing */
+  .home-container .hero { height: 28vh; }
+  .home-container .hero-overlay h1 { font-size: 1.6rem; line-height: 1.1; }
+  .home-container .seasons { padding: 24px 12px; gap: 12px; }
+  .home-container .season { padding: 18px 12px; font-size: 1.1rem; }
+
+  /* Signup layout: stack */
+  .signup-login { flex-direction: column; padding: 28px 18px; height: auto; }
+  .signup-login .left-content, .signup-login .right-content { width: 100%; align-items: center; padding: 8px; }
+  .signup-login .form-field { width: 90%; }
+
+  /* Seedshop adjustments */
+  .seedshop { min-width: auto; }
+  .seedshop-list { max-height: none; padding: 16px; }
+  .seedshop-item { flex-direction: column; gap: 12px; text-align: center; }
+  .seedshop-item img { width: 140px; height: 140px; margin: 0 auto; }
+  .seedshop-item-info { flex-direction: column; gap: 12px; align-items: center; }
+  .seedshop-item-info h2 { font-size: 28px; }
+  .seedshop-item-info .quantity { font-size: 28px; width: auto; }
+
+  /* Bookstore card sizing */
+  .bookstore .book-wrapper { max-width: 92%; padding: 20px; }
+  .bookstore .book-title { font-size: 2rem; }
+}
+
+/* ---------- Tablet (small) ---------- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .mobile-toggle { display: inline-block; }
+  .nav { display: none !important; position: absolute; top: 68px; right: 16px; background: rgba(255,255,255,0.99); flex-direction: column; padding: 12px; border-radius: 10px; box-shadow: 0 10px 26px rgba(0,0,0,0.1); z-index: 9999; width: 320px; }
+  .nav.show { display:flex !important; }
+  .nav a { padding: 10px 12px; }
+
+  .home-container .hero { height: 34vh; }
+  .home-container .hero-overlay h1 { font-size: 2rem; }
+  .home-container .seasons { padding: 32px 20px; gap: 16px; }
+
+  .signup-login { padding: 28px; flex-direction: row; gap: 18px; }
+  .signup-login .left-content, .signup-login .right-content { width: 50%; }
+
+  .seedshop-list { max-width: 880px; padding: 18px; }
+  .seedshop-item { padding: 18px 22px; }
+  .seedshop-item-info h2 { font-size: 34px; }
+}
+
+/* ---------- Large tablet / small desktop ---------- */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .mobile-toggle { display: none; } /* show full nav on larger screens */
+  .nav { display: flex !important; position: relative; top: auto; right: auto; background: transparent; padding: 0; box-shadow: none; flex-direction: row; }
+  .home-container .hero { height: 38vh; }
+  .home-container .hero-overlay h1 { font-size: 2.6rem; }
+  .home-container .seasons { padding: 36px 24px; }
+  .seedshop { min-width: auto; }
+  .seedshop-list { max-height: calc(100vh - 220px); }
+
+  .signup-login { padding: 32px 40px; }
+  .signup-login .left-content { width: 48%; }
+  .signup-login .right-content { width: 48%; }
+}
+
+/* ---------- Desktop: >= 1201px ---------- */
+@media (min-width: 1201px) {
+  .mobile-toggle { display: none; }
+  .nav { display: flex !important; }
+  .home-container .hero { height: 48vh; }
+  .home-container .hero-overlay h1 { font-size: 3.2rem; }
+  .home-container .seasons { padding: 48px 60px; gap: 24px; }
+  .seedshop-list { max-width: 1100px; max-height: calc(100vh - 240px); }
+  .seedshop-item-info h2 { font-size: 40px; }
+  .bookstore .book-title { font-size: 3.4rem; }
+}
+
+/* ---------- Large desktop: >= 1600px ---------- */
+@media (min-width: 1600px) {
+  .home-container .hero { height: 60vh; }
+  .home-container .hero-overlay h1 { font-size: 3.6rem; }
+  .seedshop-title { font-size: 56px; }
+  .seedshop-item-info h2 { font-size: 44px; }
+  .bookstore .book-wrapper { max-width: 520px; padding: 36px; }
+}
+
+/* Small utility: ensure scrollbars don't break layout on small screens */
+@media (max-width: 600px) {
+  html, body { overflow-x: hidden; }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add to Cart message */
+.cart-message {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2b7a0b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.cart-message.show {
+  opacity: 1;
+}
+
+/* Hover effects */
+.seedshop-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seedshop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.add-to-cart {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive nav toggle */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
     flex-direction: column;
-    align-items: center;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   }
 
-  .signup-login .left-content,
-  .signup-login .right-content {
-    width: 90%;
+  .nav.nav-active {
+    display: flex;
   }
 
-  .signup-login .ast {
-    max-width: 400px;
+  .hamburger {
+    display: block;
   }
 
-  .contact-container .contact-main {
-    margin: 40px 20px;
-    padding: 30px 20px;
-  }
-
-  .seedshop-item-info h2 {
-    font-size: 32px;
+  .seedshop-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* Mobile Devices */
-@media (max-width: 768px) {
-  /* General */
-  .header, .footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .home-container .hero-overlay h1 {
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
-
-  .home-container .seasons {
+@media (max-width: 600px) {
+  .seedshop-list {
     grid-template-columns: 1fr;
   }
 
+  .seedshop-title {
+    font-size: 1.5rem;
+  }
+
+  .add-to-cart {
+    width: 100%;
+  }
+}
+
+/* ==========================
+   RESPONSIVE: SIGNUP / LOGIN
+   ========================== */
+
+/* Base adjustments for the layout */
+.signup-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.left-content,
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Logo and tagline styling */
+.left-content img.ast {
+  max-width: 220px;
+  width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Form area */
+.right-content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.form-field {
+  background: #f8f8f8;
+  margin: 0.6rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.signup-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.signup-button:hover {
+  background: #45a049;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ==========================
+   RESPONSIVENESS
+   ========================== */
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
   .signup-login {
     flex-direction: column;
-    padding: 20px;
-  }
-
-  .signup-login .left-content,
-  .signup-login .right-content {
-    width: 100%;
+    padding: 1rem;
     align-items: center;
-    text-align: center;
   }
 
-  .signup-login .form-title {
-    font-size: 26px;
+  .left-content {
+    order: 1;
   }
 
-  .signup-login .form-field {
+  .right-content {
+    order: 2;
     width: 100%;
+    padding: 1.5rem;
   }
 
-  .bookstore .book-wrapper {
-    width: 95%;
-    padding: 20px;
+  .left-content img.ast {
+    max-width: 150px;
   }
 
-  .bookstore .book-title {
-    font-size: 2rem;
-  }
-
-  .bookstore .book-image {
-    max-width: 180px;
-  }
-
-  .contact-container .contact-main h1 {
-    font-size: 2rem;
-  }
-
-  .contact-container .contact-info p {
+  .tagline {
     font-size: 1rem;
   }
 
-  .seedshop-title {
-    font-size: 32px;
+  .form-title {
+    font-size: 1.3rem;
   }
 
-  .seedshop-item {
+  .signup-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Tablets (601px–900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .signup-login {
     flex-direction: column;
     text-align: center;
   }
 
-  .seedshop-item img {
-    width: 80px;
-    height: 80px;
+  .right-content {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  .seedshop-item-info {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .seedshop-item-info h2 {
-    font-size: 24px;
-  }
-
-  .seedshop-item-info .add-to-cart {
-    font-size: 18px;
-    padding: 8px 20px;
-  }
-
-  .cart-main .empty-message {
-    font-size: 24px;
-  }
-
-  .cart-main .checkout-button {
-    font-size: 20px;
-    padding: 10px 25px;
+  .form-field {
+    padding: 0.8rem;
   }
 }
 
-/* Small mobile (under 480px) */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
+/* Laptops (901px–1300px) */
+@media (min-width: 901px) and (max-width: 1300px) {
+  .signup-login {
+    gap: 1.5rem;
   }
 
-  .header .logo {
-    height: 40px;
+  .left-content img.ast {
+    max-width: 180px;
   }
 
-  .nav a {
-    font-size: 16px;
-    margin: 8px;
-  }
-
-  .home-container .hero-overlay h1 {
-    font-size: 1.5rem;
-  }
-
-  .signup-login .signup-button {
-    font-size: 18px;
-  }
-
-  .bookstore .book-title {
+  .form-title {
     font-size: 1.5rem;
   }
 }
+
+/* Large desktops (1301px and above) */
+@media (min-width: 1301px) {
+  .signup-login {
+    padding: 3rem 6rem;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+  }
+
+  .form-field {
+    padding: 1.2rem;
+  }
+}
+
